@@ -22,7 +22,16 @@ while True:
         number = number
         number2 = number2
         if user_input == "+":
-            result = number + number2
+            result = f"{number} + {number2} = {number + number2}"
+            break
+        elif user_input == "-":
+            result = f"{number} - {number2} = {number - number2}"
+            break
+        elif user_input == "*":
+            result = f"{number} * {number2} = {number * number2}"
+            break
+        elif user_input == "/":
+            result = f"{number} / {number2} = {number / number2}"
             break
         else:
             print("please enter given operation ")
