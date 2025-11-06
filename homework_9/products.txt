@@ -1,0 +1,6 @@
+Keyboard
+Mouse
+Monitor
+Speaker
+Webcam
+Headphone
