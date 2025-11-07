@@ -1,0 +1,6 @@
+date,product,region,units_sold,unit_price
+2025-10-01,Keyboard,North,5,20.0
+2025-10-01,Mouse,South,10,15.0
+2025-10-02,Keyboard,South,3,21.0
+2025-10-02,Monitor,North,2,150.0
+2025-10-03,Mouse,North,8,14.5
