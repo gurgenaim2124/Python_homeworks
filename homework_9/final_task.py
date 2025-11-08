@@ -21,15 +21,23 @@ with open(data_path,) as f:
                 cell = int(cell)
             elif header == "unit_price":
                 cell = float(cell)
-            elif header == "region":
-                for head in headers:
-                    head = "North"
-                    # cell = head            aqedan unda gavagrdzelo 4.filter and print
-                
+                        
             df[header].append(cell)
+            
+total_keyboard_north = 0
+total_mouse_south = 0
+
+for i in range(len(df["product"])):
+    if df["product"][i] == "Keyboard" and df["region"][i] == "North":
+        total_keyboard_north += df["units_sold"][i]
+    if df["product"][i] == "Mouse" and df["region"][i] == "South":
+        total_mouse_south += df["units_sold"][i]
+
 
 print(f"Total units sold: {sum(df["units_sold"])}")
 print(f"Average unit price: {sum(df["unit_price"]) / len(df)}")
 print(f"Most popular product: {max(df["product"])}")
 print(f"Total revenure per region: {sum(df["units_sold"]) + sum(df["unit_price"]) / len(df)}")
-print(f"In North keyboard units sold were {df["region"]}")
+# print(f"In North keyboard units sold were {keyboard_north}")
+print("Keyboard units sold in North:", total_keyboard_north)
+print("Mouse units sold in South:", total_mouse_south)
