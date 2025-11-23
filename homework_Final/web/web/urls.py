@@ -19,12 +19,13 @@ from django.urls import path
 from django.conf.urls.static import static
 from core.views import  HomeView, ProductDetailView
 from django.conf import settings
-
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", HomeView.as_view(), name= 'products'),
-    path("product/<int:pk>/", ProductDetailView.as_view(), name= 'product-details')
+    path("product/<int:pk>/", ProductDetailView.as_view(), name= 'product-details'),
+    # path("product.html", TemplateView.as_view(template_name="product.html")),
 ]
 
 if settings.DEBUG:

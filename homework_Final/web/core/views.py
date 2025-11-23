@@ -2,16 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView
 from core.models import Product
-
 # Create your views here.
 
-# def home_view(request):
-#     return render(request,
-#                 "base.html",
-#                 {
-#                     "Product": Product.objects.all()
-#                 }
-#     )
 
 class HomeView(ListView):
     model = Product
@@ -22,3 +14,4 @@ class HomeView(ListView):
 class ProductDetailView(DetailView):
     model = Product
     template_name = "product.html"
+    
