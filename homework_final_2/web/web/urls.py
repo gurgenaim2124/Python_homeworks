@@ -16,20 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls.static import static
-from core.views import  HomeView, ProductDetailView
-from django.conf import settings
-from django.views.generic import TemplateView
-from core.views import nav_page
-from core.views import gadgets_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", HomeView.as_view(), name= 'products'),
-    path("product/<int:pk>/", ProductDetailView.as_view(), name= 'product-details'),
-    path("Gadgets.html/", nav_page, name='nav'),
-    path("gadgets/", gadgets_page, name='gadgets')
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

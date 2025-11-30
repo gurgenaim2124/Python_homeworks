@@ -25,9 +25,9 @@
     </label>
   </div>
   
-  <div class="nav-links">
+ <div class="nav-links">
     <a href="http://127.0.0.1:8000/">Footwear</a>
-    <a href="{% url 'gadgets' %}">Gadgets</a>
+    <a href="Gadgets.html">Gadgets</a>
     <a href="#">Clothes</a>
     <a href="#">Home Decor</a>
     <a href="#">Books</a>
@@ -36,11 +36,11 @@
 
 {% comment %} amis zemot nav bari {% endcomment %}
 
-<div class="main">
+<div class="main"> 
     
 <h1>Products</h1>
 <ul class="cards">
-  {% for product in object_list %}
+  {% for product in products %}
     <li class="cards_item">
       <div class="card">
         <div class="card_image">
@@ -58,3 +58,21 @@
 
 </body>
 </html>
+
+
+{% comment %} 
+<h1>Gadgets</h1>
+
+<ul>
+    {% for product in products %}
+        <li>
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            {% if product.thumbnails %}
+                <img src="{{ product.thumbnails.url }}" width="200">
+            {% endif %}
+        </li>
+    {% empty %}
+        <p>No products in Gadgets category.</p>
+    {% endfor %}
+</ul> {% endcomment %}
