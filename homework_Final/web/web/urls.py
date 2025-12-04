@@ -20,15 +20,30 @@ from django.conf.urls.static import static
 from core.views import  HomeView, ProductDetailView
 from django.conf import settings
 from django.views.generic import TemplateView
-from core.views import nav_page
-from core.views import gadgets_page
+from core.views import nav_page, nav1_page, nav2_page, nav3_page
+from core.views import gadgets_page, clothes_page, home_decor_page, books_page
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", HomeView.as_view(), name= 'products'),
     path("product/<int:pk>/", ProductDetailView.as_view(), name= 'product-details'),
-    path("Gadgets.html/", nav_page, name='nav'),
-    path("gadgets/", gadgets_page, name='gadgets')
+    # path("Gadgets.html/", nav_page, name='nav'), 
+    # path("gadgets/", gadgets_page, name='gadgets'),
+
+    # path("Clothes.html/", nav1_page, name='nav1'), 
+    # path("clothes/", clothes_page, name='clothes'),
+
+    # path("Home_decor.html/", nav2_page, name='nav2'), 
+    # path("home_decor/", home_decor_page, name='home_decor'),
+    
+    # path("Books.html/", nav3_page, name='nav3'), 
+    # path("books/", Books_page, name='books'),
+    
+    path("gadgets/", gadgets_page, name="gadgets"),
+    path("clothes/", clothes_page, name="clothes"),
+    path("home_decor/", home_decor_page, name="home_decor"),
+    path("books/", books_page, name="books"),    
 ]
 
 if settings.DEBUG:
